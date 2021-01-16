@@ -1,0 +1,33 @@
+<h1>Cocktail show page</h1>
+
+<h2><%= @cocktail.name %></h2>
+
+
+ <% if @cocktail.ingredients.count >= 1 %>
+<p>Ingredients</p>
+<ul>
+  <% @cocktail.ingredients.each do |d| %>
+  <li><%= d.name %></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>No Ingredients</p>
+<% end %>
+
+
+<% if @cocktail.doses.count >= 1 %>
+<p>Doses</p>
+<ul>
+  <% @cocktail.doses.each do |d| %>
+  <li><%= d.description %></li>
+  <%= link_to "Delete", dose_path(d), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+  <% end %>
+</ul>
+<% else %>
+<p>No Doses</p>
+<% end %>
+
+<br>
+<br>
+<h4><%= link_to "Add Dose", new_cocktail_dose_path(@cocktail) %></h4>
+

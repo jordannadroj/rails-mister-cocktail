@@ -1,0 +1,8 @@
+<h1>Add dose</h1>
+
+<%= simple_form_for [@cocktail, @dose ] do |f| %>
+  <%= f.input :description %>
+  <!-- the below creates a dropdown of all the ingredients, and will assign the proper ID to the new Dose record  -->
+  <%= f.association :ingredient %>
+  <%= f.submit %>
+<% end %>
