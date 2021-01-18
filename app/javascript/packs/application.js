@@ -16,3 +16,21 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+
+import { select2 } from '../components/select2';
+import { loadDynamicBannerText } from '../components/banner';
+
+
+// triggers teh event when page loads
+document.addEventListener("turbolinks:load", function() {
+  select2();
+});
+
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicBannerText();
+});
+
+console.log('Hello!')
