@@ -6,19 +6,54 @@
 }
 
 .card-category {
-  background-size: cover;
-  background-position: center;
+  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('whiskey.jpg');
+  // background-size: cover;
+  // background-position: center;
+  // opacity: 0.5;
+  position: relative;
+  overflow: hidden;
   height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // padding-left: 8px;
+  text-align: center;
   color: white;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: light;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  a {
+    color: white;
+  }
+  ul {
+    opacity: 0;
+    list-style-type: none;
+  }
 }
+
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('whiskey.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0;
+  transition: all 1s;
+}
+
+.card-image:hover {
+  transform: scale(1.1);
+}
+
+// .card-category:hover {
+//   transform: scale(1.2);
+// }
+
+
+// .card-category:hover ul {
+//   opacity: 1;
+// }
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

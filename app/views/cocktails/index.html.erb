@@ -1,3 +1,5 @@
+<%= render "navbar" %>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url('bar.jpg') %>);">
   <div class="container">
     <h1>Mister Cocktail</h1>
@@ -8,21 +10,27 @@
 </div>
 
 
+<!-- style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%#= image_url('whiskey.jpg') %>)"> -->
 
-
-<h1>Cocktails</h1>
+<h1 style="text-align: center; padding-top: 8px;">Cocktails</h1>
 
 <div class="cards">
 <% @cocktails.each do |c| %>
-<!-- <li><%#= link_to c.name, cocktail_path(c) %></li> -->
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url('whiskey.jpg') %>)">
-    <%= link_to c.name, cocktail_path(c) %>
-  </div>
-<% end %>
+  <!-- <li><%#= link_to c.name, cocktail_path(c) %></li> -->
+  <div class="card-category">
+    <div class="card-image">
+        <%= link_to c.name, cocktail_path(c) %>
+        <ul>
+          <% c.ingredients.each do |i| %>
+          <li><%= i.name %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <!-- </>Ingredients</p> -->
+  <% end %>
 </div
 
-
-<%= link_to "Add a new cocktail", new_cocktail_path %>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">

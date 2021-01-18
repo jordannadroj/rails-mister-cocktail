@@ -1,3 +1,29 @@
 // Place all the styles related to the Cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.cocktail-banner {
+  height: 300px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('whiskey.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 120px 0;
+}
+
+.cocktail-show {
+  padding-top: 12px;
+  padding-left: 20px;
+  margin: 12px;
+  hr {
+    width: 50%;
+    text-align: left;
+    margin-left: 0;
+    height: 2px;
+  }
+}
+
+.new-cocktail {
+  padding: 120px;
+}
+

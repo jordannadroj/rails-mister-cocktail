@@ -1,3 +1,4 @@
+<div class="new-dose">
 <h1>Add dose</h1>
 
 <%= simple_form_for [@cocktail, @dose ] do |f| %>
@@ -6,3 +7,4 @@
   <%= f.association :ingredient, input_html: { class: 'ingredient-list' } %>
   <%= f.submit %>
 <% end %>
+</div>
