@@ -9,7 +9,9 @@
   </div>
 </div>
 
-<h1>Hello this is a test</h1>
+<!-- below is the image tag for cloudinary images -->
+<%#= cl_image_tag("x2ni57j4hnc2sfjoqye8",
+      width: 400, height: 300, crop: :fill) %>
 
 <!-- style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%#= image_url('whiskey.jpg') %>)"> -->
 
@@ -19,7 +21,7 @@
 <% @cocktails.each do |c| %>
   <!-- <li><%#= link_to c.name, cocktail_path(c) %></li> -->
   <div class="card-category">
-    <div class="card-image">
+    <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path c.photo.key, height: 300, width: 400, crop: :fill %>)">
         <%= link_to c.name, cocktail_path(c) %>
         <ul>
           <% c.ingredients.each do |i| %>
