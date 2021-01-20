@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: red;
+  opacity: 0.5;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,5 +15,4 @@
 
 .navbar {
   display: flex;
-
 }

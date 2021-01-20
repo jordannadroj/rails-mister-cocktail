@@ -15,33 +15,44 @@
 
 <!-- style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%#= image_url('whiskey.jpg') %>)"> -->
 
-<h1 style="text-align: center; padding-top: 8px;">Cocktails</h1>
+<!-- <h1 style="text-align: center; padding-top: 8px;">Cocktails</h1> -->
 
 <div class="cards">
-<% @cocktails.each do |c| %>
-  <!-- <li><%#= link_to c.name, cocktail_path(c) %></li> -->
-  <div class="card-category">
-    <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path c.photo.key, height: 300, width: 400, crop: :fill %>)">
-        <%= link_to c.name, cocktail_path(c) %>
-        <ul>
-          <% c.ingredients.each do |i| %>
-          <li><%= i.name %></li>
-          <% end %>
-        </ul>
+  <% @cocktails.each do |c| %>
+    <!-- <li><%#= link_to c.name, cocktail_path(c) %></li> -->
+    <div class="card-category">
+      <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path c.photo.key, height: 300, width: 400, crop: :fill %>)">
+          <%#= link_to c.name, cocktail_path(c) %>
       </div>
+        <!-- <table class="index-ingredients">
+          <tr>
+            <#% c.ingredients.each do |i| %>
+            <td><%#= i.name %></td>
+            <#% end %>
+          </tr>
+        </table> -->
+        <div class="index-ingredients">
+          <%= link_to c.name, cocktail_path(c) %>
+          <hr>
+          <ul style="list-style-type: none; margin: 0; padding: 0;">
+            <% c.ingredients.each do |i| %>
+            <li><%= i.name %></li>
+            <% end %>
+          </ul>
+        </div>
     </div>
     <!-- </>Ingredients</p> -->
   <% end %>
-</div
+</div>
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
-</button>
+</button> -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -51,7 +62,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -60,3 +71,7 @@
     </div>
   </div>
 </div>
+
+ -->
+
+

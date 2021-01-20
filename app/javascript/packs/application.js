@@ -33,4 +33,39 @@ document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
 });
 
-console.log('Hello!')
+const banner = document.querySelector(".banner")
+
+// banner.addEventListener("mouseenter", (event) => {
+//   console.log(banner);
+// })
+
+// from here. Below are tests to make elements visible with some JS. Did not work as intended but used a solution in css. See Card.scss
+// const ingredientsList = document.querySelectorAll(".index-ingredients");
+// const card = document.querySelectorAll(".card-category");
+
+
+// const showList = (element) => {
+//   element.style.visibility = "visible"
+// }
+
+// const hideList = (element) => {
+//   element.style.visibility = "collapse"
+// }
+
+// const hoverToExpand = (element) => {
+//   element.addEventListener("mouseover", (event) => {
+//   ingredientsList.forEach(showList);
+// });
+// }
+
+// const reverseHover = (hello) => {
+//   hello.addEventListener("mouseout", (event) => {
+//   ingredientsList.forEach(hideList)
+// });
+// }
+
+// card.forEach(hoverToExpand);
+// card.forEach(reverseHover);
+
+
+console.log("hello")
