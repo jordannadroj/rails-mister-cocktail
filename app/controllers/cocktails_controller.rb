@@ -14,7 +14,7 @@ class CocktailsController < ApplicationController
       redirect_to root_path
     else
       @search = params[:search].downcase
-      @results = Cocktail.all.where('lower(name) LIKE :search', search: @search)
+      @results = Cocktail.all.where('lower(name) LIKE :search', search: "%#{@search}%")
     end
   end
 
