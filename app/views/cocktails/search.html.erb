@@ -18,10 +18,10 @@
 <!-- <h1 style="text-align: center; padding-top: 8px;">Cocktails</h1> -->
 
 <div class="cards">
-  <% @cocktails.each do |c| %>
+  <% @results.each do |r| %>
     <!-- <li><%#= link_to c.name, cocktail_path(c) %></li> -->
     <div class="card-category">
-      <div class="card-image" style="background-image: linear-gradient(rgba(50,50,50,0.1),rgba(50,50,50,0.2)), url(<%= cl_image_path c.photo.key, height: 300, width: 400, crop: :fill %>)">
+      <div class="card-image" style="background-image: linear-gradient(rgba(50,50,50,0.1),rgba(50,50,50,0.2)), url(<%= cl_image_path r.photo.key, height: 300, width: 400, crop: :fill %>)">
           <%#= link_to c.name, cocktail_path(c) %>
       </div>
         <!-- <table class="index-ingredients">
@@ -32,10 +32,10 @@
           </tr>
         </table> -->
         <div class="index-ingredients">
-          <%= link_to c.name, cocktail_path(c) %>
+          <%= link_to r.name, cocktail_path(r) %>
           <hr>
           <ul style="list-style-type: none; margin: 0; padding: 0;">
-            <% c.ingredients.each do |i| %>
+            <% r.ingredients.each do |i| %>
             <li><%= i.name %></li>
             <% end %>
           </ul>
@@ -44,34 +44,3 @@
     <!-- </>Ingredients</p> -->
   <% end %>
 </div>
-
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
- -->
-
-

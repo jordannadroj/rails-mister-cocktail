@@ -8,6 +8,16 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 
+  def search
+    # raise
+    if params[:search].blank?
+      redirect_to root_path
+    else
+      @search = params[:search].downcase
+      @results = Cocktail.all.where('lower(name) LIKE :search', search: @search)
+    end
+  end
+
   def new
     @cocktail = Cocktail.new
   end
