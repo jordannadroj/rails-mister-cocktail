@@ -5,6 +5,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    # raise
     @cocktail = Cocktail.find(params[:id])
   end
 

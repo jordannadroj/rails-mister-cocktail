@@ -39,6 +39,16 @@
             <li><%= i.name %></li>
             <% end %>
           </ul>
+          <% if c.reviews.count >= 1 %>
+            <% ratings = [] %>
+            <% c.reviews.each do |r| %>
+              <% ratings << r.rating %>
+            <% end %>
+            <% average = ratings.sum / ratings.length %>
+            <% average.times do %>
+            <span>⭐️</span>
+            <% end %>
+          <% end %>
         </div>
     </div>
     <!-- </>Ingredients</p> -->

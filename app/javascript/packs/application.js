@@ -21,6 +21,12 @@ import { select2 } from '../components/select2';
 import { loadDynamicBannerText } from '../components/banner';
 
 
+// app/javascript/packs/application.js
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
+
+
 // triggers teh event when page loads
 document.addEventListener("turbolinks:load", function() {
   select2();

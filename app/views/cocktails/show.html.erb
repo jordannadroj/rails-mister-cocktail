@@ -1,42 +1,70 @@
 
-  <div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>)">
-    <h2><%= @cocktail.name %></h2>
+<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>)">
+  <h2><%= @cocktail.name %></h2>
+</div>
+
+<div class="show-container">
+  <div class="cocktail-show"> <!-- the div to show the ingredients and preparation, plus button -->
+    <% if @cocktail.ingredients.count >= 1 %>
+      <h3>Ingredients</h3>
+      <hr>
+      <ul>
+        <% @cocktail.ingredients.each do |d| %>
+        <li><%= d.name %></li>
+        <% end %>
+      </ul>
+      <% else %>
+        <p>No Ingredients</p>
+    <% end %>
+
+
+    <% if @cocktail.doses.count >= 1 %>
+      <h3>Preparation</h3>
+      <hr>
+      <p>Makes 1 serving</p>
+      <ul>
+        <% @cocktail.doses.each do |d| %>
+        <li><%= d.description %></li>
+        <%= link_to "Delete", dose_path(d), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+        <% end %>
+      </ul>
+      <% else %>
+      <p>No Doses</p>
+    <% end %>
+
+    <br>
+    <br>
+    <h4><%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail) %></h4>
+
+    <%= link_to "Back", root_path %>
   </div>
 
+  <!--
+  <%# if @cocktail.reviews.count >= 1 %>
+    <%# ratings = [] %>
+    <%# @cocktail.reviews.each do |r| %>
+      <%# ratings << r.rating %>
+    <%# end %>
+    <%# average = ratings.sum / ratings.length %>
+    <%# average.times do %>
+    <span>⭐️</span>
+    <%# end %>
+  <%# end %> -->
 
-  <div class="cocktail-show">
 
-
-   <% if @cocktail.ingredients.count >= 1 %>
-  <h3>Ingredients</h3>
-  <hr>
-  <ul>
-    <% @cocktail.ingredients.each do |d| %>
-    <li><%= d.name %></li>
+  <div class="show-reviews">
+    <h3>Reviews</h3>
+    <hr>
+    <% if @cocktail.reviews.count >= 1 %>
+      <% @cocktail.reviews.each do |r| %>
+        <p>"<%= r.content %>"</p>
+        <% r.rating.times do %>
+        <span>⭐️</span>
+        <% end %>
+        <hr>
+      <% end %>
     <% end %>
-  </ul>
-  <% else %>
-    <p>No Ingredients</p>
-  <% end %>
-
-
-  <% if @cocktail.doses.count >= 1 %>
-  <h3>Preparation</h3>
-  <hr>
-  <p>Makes 1 serving</p>
-  <ul>
-    <% @cocktail.doses.each do |d| %>
-    <li><%= d.description %></li>
-    <%= link_to "Delete", dose_path(d), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
-    <% end %>
-  </ul>
-  <% else %>
-  <p>No Doses</p>
-  <% end %>
-
-  <br>
-  <br>
-  <h4><%= link_to "Add Dose", new_cocktail_dose_path(@cocktail) %></h4>
-
-  <%= link_to "Back", root_path %>
+    <h4><%= link_to "Leave a rating", new_cocktail_review_path(@cocktail) %></h4>
+  </div>
 </div>
+
