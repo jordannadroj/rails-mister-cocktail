@@ -26,7 +26,9 @@ ingredients["drinks"].each do |i|
 end
 
 
-puts "finished"
+puts "finished ingredients"
+
+
 
 
 

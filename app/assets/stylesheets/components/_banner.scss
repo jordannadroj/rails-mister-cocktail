@@ -1,5 +1,8 @@
 .banner {
   background-size: cover;
+  // clip path can change the shape of the photo or object
+  // for clip paths go to https://bennettfeely.com/clippy/
+  // clip-path: polygon(0 0, 100% 0, 100% 61%, 0 100%);
   background-position: center;
   padding: 150px 0;
   h1 {

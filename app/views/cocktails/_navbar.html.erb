@@ -1,4 +1,4 @@
- <nav class="navbar sticky-top navbar-light bg-light">
+ <nav class="navbar sticky-top navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">Mister Cocktail</a>
       <!-- the below code until line 12 is for a search field -->
@@ -6,11 +6,11 @@
         <div class="input-group">
           <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
           <div class="input-group-btn">
-            <%= button_tag "Search for cocktails", :class => 'btn btn-primary glyphicon glyphicon-search', :name => nil %>
+            <%= button_tag "Search for cocktails", :class => 'btn btn-outline-primary glyphicon glyphicon-search', :name => nil %>
           </div>
         </div>
         <% end %>
-        <%= link_to "Add a new cocktail", new_cocktail_path %>
+        <%#= link_to "Add a new cocktail", new_cocktail_path %>
     </div>
   </nav>
 

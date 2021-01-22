@@ -1,8 +1,5 @@
 
-<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>)">
-  <h2><%= @cocktail.name %></h2>
-</div>
-
+<%= render "cocktail-banner" %>
 <div class="show-container">
   <div class="cocktail-show"> <!-- the div to show the ingredients and preparation, plus button -->
     <% if @cocktail.ingredients.count >= 1 %>
