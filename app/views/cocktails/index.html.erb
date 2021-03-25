@@ -44,7 +44,7 @@
             <% c.reviews.each do |r| %>
               <% ratings << r.rating %>
             <% end %>
-            <% average = ratings.sum / ratings.length %>
+            <% average = ratings.sum.to_f / ratings.length.to_f %>
             <% average.times do %>
             <span>⭐️</span>
             <% end %>
